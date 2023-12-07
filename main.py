@@ -1,5 +1,6 @@
 from itertools import groupby
 
+
 def archive_string_isalpha(string: str) -> bool:
     if not string.isalpha():                        # проверяем состоит ли входящая строка для архивации только из букв
         return False                                # нет - просим корректный ввод, да - переходим к archive_string
@@ -48,17 +49,18 @@ if __name__ == '__main__':
                     print('Можно ввести только буквы ! ')
                     continue
                 result_archive_string: str = archive_string(text)
-                print(result_archive_string)
+                print('Результат:', result_archive_string)
             elif user_choice == 'n':
                 text: str = input('Введи строку в формате буква+число(a2b3c4d5) либо (qw4ert6y7) ')
                 if not restore_string_isalnum(text):
                     print('Строка должна начинаться с буквы и не включать спецсимволы ! ')
                     continue
                 dearchive_string: str = restore_string(text)
-                if dearchive_string != text:
-                    print(dearchive_string)
+                if len(dearchive_string) == len(text):
+                    print('Результат:', dearchive_string)
                 else:
-                    print('К сожалению вашу строку нельзя уменьшить :(' )
+                    print('Результат:', dearchive_string)
+                    print('К сожалению вашу строку нельзя сделать короче :(')
             else:
                 print('Необходимо выбрать из двух вариантов: y или n ! ')
                 continue
