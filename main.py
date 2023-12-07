@@ -47,7 +47,7 @@ if __name__ == '__main__':
                 text: str = input('Введи строку из букв для архивации без пробелов ')
                 if not archive_string_isalpha(text):
                     print('Можно ввести только буквы ! ')
-                    continue
+                    break
                 result_archive_string: str = archive_string(text)
                 if len(result_archive_string) != len(text):
                     print('Результат:', result_archive_string)
@@ -58,12 +58,12 @@ if __name__ == '__main__':
                 text: str = input('Введи строку в формате буква+число(a2b3c4d5) либо (qw4ert6y7) ')
                 if not restore_string_isalnum(text):
                     print('Строка должна начинаться с буквы и не включать спецсимволы ! ')
-                    continue
+                    break
                 dearchive_string: str = restore_string(text)
                 print('Результат:', dearchive_string)
             else:
                 print('Необходимо выбрать из двух вариантов: y или n ! ')
-                continue
+                break
             end_of_work: str = input('Хотите продолжить ? (y)Да, (n)Нет ')
             if end_of_work == 'y':
                 continue
