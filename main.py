@@ -49,18 +49,18 @@ if __name__ == '__main__':
                     print('Можно ввести только буквы ! ')
                     continue
                 result_archive_string: str = archive_string(text)
-                print('Результат:', result_archive_string)
+                if len(result_archive_string) != len(text):
+                    print('Результат:', result_archive_string)
+                else:
+                    print('Результат:', result_archive_string)
+                    print('К сожалению вашу строку нельзя сделать короче :(')
             elif user_choice == 'n':
                 text: str = input('Введи строку в формате буква+число(a2b3c4d5) либо (qw4ert6y7) ')
                 if not restore_string_isalnum(text):
                     print('Строка должна начинаться с буквы и не включать спецсимволы ! ')
                     continue
                 dearchive_string: str = restore_string(text)
-                if len(dearchive_string) == len(text):
-                    print('Результат:', dearchive_string)
-                else:
-                    print('Результат:', dearchive_string)
-                    print('К сожалению вашу строку нельзя сделать короче :(')
+                print('Результат:', dearchive_string)
             else:
                 print('Необходимо выбрать из двух вариантов: y или n ! ')
                 continue
