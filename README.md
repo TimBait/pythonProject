@@ -16,4 +16,4 @@
 
 Для запуска тестов:
 1. Установить pytest (pip install pytest)
-2. В терминале ввести pytest **python main_test.py**
+2. В терминале ввести **pytest main_test.py**
