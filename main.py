@@ -1,14 +1,13 @@
 from itertools import groupby
 
-
-def archive_string_is_alpha(string: str) -> bool:
+def archive_string_isalpha(string: str) -> bool:
     if not string.isalpha():                        # проверяем состоит ли входящая строка для архивации только из букв
         return False                                # нет - просим корректный ввод, да - переходим к archive_string
     return True
 
 
-def restore_string_is_alnum(string: str) -> bool:     # проверяем состоит ли входящая строка для деархивации только
-    if not string.isalnum() or text[0].isdigit():     # из букв + цифр и первая буква не цифра
+def restore_string_isalnum(string: str) -> bool:     # проверяем состоит ли входящая строка для деархивации только
+    if not string.isalnum() or string[0].isdigit():     # из букв + цифр и первая буква не цифра
         return False                                  # нет - просим корректный ввод, да - переходим к restore_string
     return True
 
@@ -45,14 +44,14 @@ if __name__ == '__main__':
             user_choice: str = input('Выбери действие: Архивация строки(y) или деархивация(n)? ')
             if user_choice == 'y':
                 text: str = input('Введи строку из букв для архивации без пробелов ')
-                if not archive_string_is_alpha(text):
+                if not archive_string_isalpha(text):
                     print('Можно ввести только буквы ! ')
                     continue
                 result_archive_string: str = archive_string(text)
                 print(result_archive_string)
             elif user_choice == 'n':
                 text: str = input('Введи строку в формате буква+число(a2b3c4d5) либо (qw4ert6y7) ')
-                if not restore_string_is_alnum(text):
+                if not restore_string_isalnum(text):
                     print('Строка должна начинаться с буквы и не включать спецсимволы ! ')
                     continue
                 dearchive_string: str = restore_string(text)
